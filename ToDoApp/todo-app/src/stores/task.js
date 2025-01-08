@@ -33,7 +33,10 @@ export const useTaskStore = defineStore('task', () => {
     const taskIdx = tasks.value.findIndex(t => t.id === id)
     tasks.value[taskIdx].isFinished = !tasks.value[taskIdx].isFinished
   }
+  function addTask(task) {
+    tasks.value.push(task)
+  }
   const nextId = computed(() => tasks.value[tasks.value.length - 1].id + 1)
 
-  return { tasks, deleteTask, finishTask, nextId }
+  return { tasks, deleteTask, finishTask, nextId, addTask }
 })

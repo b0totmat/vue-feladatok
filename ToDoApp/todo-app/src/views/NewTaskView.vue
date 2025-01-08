@@ -3,7 +3,7 @@
         <form>
             <div class="mb-3">
                 <label for="task-name" class="form-label">Új feladat neve:</label>
-                <input type="email" class="form-control" id="task-name" v-model="title">
+                <input type="text" class="form-control" id="task-name" v-model="title">
             </div>
             <div class="mb-3">
                 <label for="task-description" class="form-label">Leírás:</label>
@@ -39,6 +39,6 @@
         }
 
         console.log(newTask)
-        tasks.tasks.push(newTask)
+        tasks.addTask(newTask)
     }
 </script>
