@@ -1,4 +1,4 @@
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 
 export const useTaskStore = defineStore('task', () => {
@@ -33,6 +33,7 @@ export const useTaskStore = defineStore('task', () => {
     const taskIdx = tasks.value.findIndex(t => t.id === id)
     tasks.value[taskIdx].isFinished = !tasks.value[taskIdx].isFinished
   }
+  const nextId = computed(() => tasks.value[tasks.value.length - 1].id + 1)
 
-  return { tasks, deleteTask, finishTask }
+  return { tasks, deleteTask, finishTask, nextId }
 })
