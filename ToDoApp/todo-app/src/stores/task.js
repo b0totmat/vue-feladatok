@@ -1,4 +1,4 @@
-import { ref, computed } from 'vue'
+import { ref } from 'vue'
 import { defineStore } from 'pinia'
 
 export const useTaskStore = defineStore('task', () => {
@@ -30,8 +30,8 @@ export const useTaskStore = defineStore('task', () => {
     tasks.value.splice(taskToDeleteIdx, 1)
   }
   function finishTask(id) {
-    const taskIdx = tasks.value.find(t => t.id === id)
-    tasks[taskIdx].isFinished = true
+    const taskIdx = tasks.value.findIndex(t => t.id === id)
+    tasks.value[taskIdx].isFinished = !tasks.value[taskIdx].isFinished
   }
 
   return { tasks, deleteTask, finishTask }
