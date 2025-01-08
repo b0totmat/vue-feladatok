@@ -9,6 +9,7 @@
                         <p class="card-text">Állapot: {{ task.isFinished ? "Kész" : "Nincs kész" }}</p>
                         <a class="btn btn-primary me-1" @click="tasks.finishTask(task.id)">Kész</a>
                         <a class="btn btn-danger" @click="tasks.deleteTask(task.id)">Törlés</a>
+                        <a class="btn btn-secondary" @click="redirect(task.id)">Módosítás</a>
                     </div>
                 </div>
             </li>
@@ -17,5 +18,13 @@
 </template>
 <script setup>
     import { useTaskStore } from '@/stores/task'
+    import { useRouter } from 'vue-router'
+
+    const router = useRouter()
+
     const tasks = useTaskStore()
+
+    const redirect = (id) => {
+        router.push(`/edittask/${id}`)
+    }
 </script>
