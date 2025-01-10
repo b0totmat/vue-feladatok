@@ -37,11 +37,8 @@ export const useTaskStore = defineStore('task', () => {
     tasks.value.push(task)
   }
   function modifyTask(task) {
-    let taskToModify = tasks.value.find(t => t.id === task.id)
-    taskToModify.title = task.title
-    taskToModify.desc = task.desc
-    taskToModify.isFinished = task.isFinished
-    taskToModify.deadline = task.deadline
+    let taskToModifyIdx = tasks.value.findIndex(t => t.id == task.id)
+    tasks.value[taskToModifyIdx] = task
   }
 
   const nextId = computed(() => tasks.value[tasks.value.length - 1].id + 1)
