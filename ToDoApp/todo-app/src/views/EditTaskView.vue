@@ -11,7 +11,7 @@
             </div>
             <div class="mb-3">
                 <label for="task-isFinished" class="form-check-label">Kész-e:</label>
-                <input type="checkbox" id="task-isFinished" class="form-check-input" v-model="isFinished">
+                <input type="checkbox" id="task-isFinished" class="form-check-input ms-2" v-model="isFinished">
             </div>
             <div class="mb-3">
                 <label for="task-deadline" class="form-label">Határidő:</label>
