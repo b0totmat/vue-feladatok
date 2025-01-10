@@ -49,6 +49,6 @@
         console.log(newTask)
         tasks.modifyTask(newTask)
 
-        //router.push('/tasks')
+        router.push('/tasks')
     }
 </script>
