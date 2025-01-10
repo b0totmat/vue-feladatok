@@ -29,7 +29,7 @@
     const title = ref()
     const desc = ref()
     const isFinished = ref()
-    const deadline = ref()
+    const deadline = ref(new Date().toISOString().split('T')[0])
 
     const id = useRoute().params.id,
           router = useRouter()

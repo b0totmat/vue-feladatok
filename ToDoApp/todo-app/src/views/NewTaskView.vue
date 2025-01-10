@@ -22,9 +22,9 @@
     import { useRouter } from 'vue-router'
     import { useTaskStore } from '@/stores/task'
 
-    const title = ref()
-    const desc = ref()
-    const deadline = ref()
+    const title = ref('Feladat neve')
+    const desc = ref('Nincs leírás')
+    const deadline = ref(new Date().toISOString().split('T')[0])
 
     const tasks = useTaskStore()
     const router = useRouter()
