@@ -41,7 +41,7 @@ export const useTaskStore = defineStore('task', () => {
     tasks.value[taskToModifyIdx] = task
   }
 
-  const nextId = computed(() => tasks.value[tasks.value.length - 1].id + 1)
+  const nextId = computed(() => tasks.value > 0 ? tasks.value[tasks.value.length - 1].id + 1 : 0)
 
   return { tasks, deleteTask, finishTask, nextId, addTask, modifyTask }
 })
