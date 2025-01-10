@@ -19,6 +19,7 @@
 </template>
 <script setup>
     import { ref } from 'vue'
+    import { useRouter } from 'vue-router'
     import { useTaskStore } from '@/stores/task'
 
     const title = ref()
@@ -26,6 +27,7 @@
     const deadline = ref()
 
     const tasks = useTaskStore()
+    const router = useRouter()
 
     const addTask = (e) => {
         e.preventDefault()
@@ -38,7 +40,7 @@
             deadline: deadline.value
         }
 
-        console.log(newTask)
         tasks.addTask(newTask)
+        router.push('/tasks')
     }
 </script>
